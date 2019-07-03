@@ -21,7 +21,14 @@ pipeline {
                     archiveArtifacts 'sampleWebApp/build/reports/tests/test/*'
                 }
             }
-      	}         
+      	} 
+    stage('sonarqube') {
+            steps {
+                echo 'sonarqube.'  
+                sh 'chmod +x sampleWebApp/gradlew'              
+                sh './sampleWebApp/gradlew sonarqube -p sampleWebApp'                             
+            }
+        }               
 	stage('Deploy') {
 	    steps {
 	        echo 'Deploying.'
