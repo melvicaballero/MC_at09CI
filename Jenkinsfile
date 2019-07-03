@@ -22,10 +22,10 @@ pipeline {
                 }
             }
       	}         
-	      stage('Deploy') {
-	          steps {
-	               echo 'Deploying.'
-	          }	        
+	stage('Deploy') {
+	    steps {
+	        echo 'Deploying.'
+	    }	        
         }      		
     }       
 }    
