@@ -5,7 +5,8 @@ pipeline {
             steps {
                 echo 'compiling.'  
                 sh 'chmod +x sampleWebApp/gradlew'                
-                sh './sampleWebApp/gradlew assemble -p sampleWebApp'                           
+                sh './sampleWebApp/gradlew assemble -p sampleWebApp'
+                archiveArtifacts 'sampleWebApp/build/libs/**/*.jar'                           
             }
         }       
         stage('Test') {
