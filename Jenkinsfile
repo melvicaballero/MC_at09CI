@@ -22,7 +22,7 @@ pipeline {
                 }
             }
       	} 
-    stage('sonarqube') {
+        stage('sonarqube') {
             steps {
                 echo 'sonarqube.'  
                 sh 'chmod +x sampleWebApp/gradlew'              
